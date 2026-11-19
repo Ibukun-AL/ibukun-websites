@@ -1,0 +1,44 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-11-19T22:57:03.572Z",
+        "reason": "rows li carry 12-16px padding-block through CSS variables from the kit's system.css; the detector does not resolve the variables (computed padding checked in the layout check, which has no findings)"
+      },
+      {
+        "rule": "overused-font",
+        "value": "geist",
+        "files": [
+          "assets/effects/gallery.html"
+        ],
+        "createdAt": "2026-11-19T22:57:03.617Z",
+        "reason": "kit demo gallery file, not part of the site; kit files may not be edited"
+      },
+      {
+        "rule": "pulsing-dot",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-11-19T22:57:12.016Z",
+        "reason": "the pulse is in the kit's layout.css (.ly-live::before), no element on this page uses it; kit files may not be edited"
+      },
+      {
+        "rule": "radial-halo",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-11-19T22:57:12.036Z",
+        "reason": "the gradient is in the kit's backgrounds stylesheet and is never applied on this light page; kit files may not be edited"
+      }
+    ]
+  }
+}
