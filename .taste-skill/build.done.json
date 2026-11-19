@@ -1,0 +1,11 @@
+{
+ "page": "index.html",
+ "url": null,
+ "root": null,
+ "kind": "service",
+ "category": "fixed-price Next.js websites",
+ "primary": "Send a brief",
+ "rounds": 3,
+ "start": "2026-11-19T21:46:04.687Z",
+ "by": "gate.mjs --start"
+}

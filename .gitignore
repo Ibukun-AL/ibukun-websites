@@ -1,0 +1,11 @@
+.vercel
+.env*
+!.env.example
+shots/
+.taste-skill/chrome-*
+.taste-skill/consistency*
+.taste-skill/demo.txt
+.taste-skill/layout.txt
+.taste-skill/gate*
+.DS_Store
+node_modules
