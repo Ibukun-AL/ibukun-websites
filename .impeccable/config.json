@@ -38,6 +38,15 @@
         ],
         "createdAt": "2026-11-19T22:57:12.036Z",
         "reason": "the gradient is in the kit's backgrounds stylesheet and is never applied on this light page; kit files may not be edited"
+      },
+      {
+        "rule": "flat-type-hierarchy",
+        "value": "*",
+        "files": [
+          "assets/starter.html"
+        ],
+        "createdAt": "2026-11-20T09:42:34.760Z",
+        "reason": "assets/starter.html is the skill kit's unmodified starter template (bracket placeholders), not part of the site; kit files may not be edited"
       }
     ]
   }
