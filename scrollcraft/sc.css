@@ -1,0 +1,38 @@
+/* Scrollcraft mechanics for this page: pins, the frame canvas, headline assembly, reduced motion.
+   Tokens come from the page (--bg, --ink, --nav, --gut); nothing here redefines them. */
+[data-sc-pin] { position: relative; height: 100dvh; will-change: transform; z-index: 1; }
+[data-sc-spacer] { pointer-events: none; }
+.sc-canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+
+.scrub { background: var(--bg); color: var(--ink); overflow: hidden; }
+.scrub .sc-canvas, .scrub__poster { top: var(--nav); height: calc(100% - var(--nav)); inset-inline: 0; }
+.scrub__poster { position: absolute; width: 100%; object-fit: cover; object-position: top; }
+.scrub__bar { position: absolute; left: 0; right: 0; bottom: 0; height: 3px; background: var(--ink); transform: scaleX(0); transform-origin: 0 50%; opacity: .5; }
+.scrub__copy { position: absolute; left: max(var(--gut), 24px); right: max(var(--gut), 24px); bottom: var(--s-8); pointer-events: none; }
+.scrub__beat { position: absolute; left: 0; bottom: 0; max-width: 34rem; padding: var(--s-6) var(--s-7); background: var(--bg); color: var(--ink); border-radius: var(--r-lg);
+  transition: opacity .5s var(--ease-out, ease), transform .5s var(--ease-out, ease); }
+/* hidden only when JS runs, so a failed script leaves the first line readable */
+html:not(.js) .scrub__beat:not(:first-child) { display: none; }
+.js .scrub__beat { opacity: 0; transform: translate3d(0, 24px, 0); }
+.js .scrub__beat.on { opacity: 1; transform: none; pointer-events: auto; }
+.scrub__beat h2 { font: var(--display-weight) var(--t-h2)/1.05 var(--font-display); letter-spacing: var(--display-tracking); margin: 0; }
+.scrub__beat p { margin: var(--s-3) 0 0; color: var(--muted); }
+.scrub__beat .link { display: inline-block; margin-top: var(--s-4); }
+@media (max-width: 760px) { .scrub__copy { bottom: calc(var(--s-6) + 72px); } .scrub__beat { padding: var(--s-5); } }
+
+/* headline assembly: lines are authored by hand; hidden only when JS runs */
+.assemble .line { display: block; overflow: hidden; padding-bottom: .08em; margin-bottom: -.08em; }
+.assemble .line > span { display: block; }
+.js .assemble .line > span { transform: translate3d(0, 112%, 0); transition: transform .9s cubic-bezier(.16, 1, .3, 1); }
+.js .assemble.in .line > span { transform: none; }
+.js .assemble.in .line:nth-child(2) > span { transition-delay: .09s; }
+
+@media (prefers-reduced-motion: reduce) {
+  [data-sc-pin] { height: auto; min-height: 80dvh; transform: none !important; }
+  [data-sc-spacer] { display: none; }
+  .scrub__beat { position: static; opacity: 1; transform: none; margin-top: var(--s-4); }
+  .scrub__copy { position: relative; left: auto; right: auto; bottom: auto; padding: var(--s-5) var(--gut); }
+  .scrub .sc-canvas { display: none; }
+  .scrub__poster { position: relative; top: 0; height: 60dvh; }
+  .js .assemble .line > span { transform: none; transition: none; }
+}
