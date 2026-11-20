@@ -54,4 +54,17 @@ async function resend({ subject, replyTo, text }) {
   if (!res.ok) throw new Error(`resend ${res.status}`);
 }
 
-export default { fetch: (request) => (request.method === "POST" ? handleBrief(request, resend) : json({ error: "Use POST." }, 405)) };
+// Node-style handler: read the raw body ourselves so multipart form posts parse reliably.
+export default async function handler(req, res) {
+  let response;
+  if (req.method !== "POST") response = json({ error: "Use POST." }, 405);
+  else {
+    const chunks = [];
+    for await (const c of req) chunks.push(c);
+    const request = new Request(`https://${req.headers.host || "localhost"}${req.url}`, { method: "POST", headers: req.headers, body: Buffer.concat(chunks) });
+    response = await handleBrief(request, resend);
+  }
+  res.statusCode = response.status;
+  response.headers.forEach((v, k) => res.setHeader(k, v));
+  res.end(await response.text());
+}
