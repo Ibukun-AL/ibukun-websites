@@ -3,11 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Ibukun Aluko: fixed-price websites for small businesses, from $180</title>
-<meta name="description" content="Landing pages and business sites in three fixed-scope packages from $180, delivered on the date I quote, by a developer in Abuja.">
+<title>Ibukun Aluko: websites for small businesses, built by a senior developer</title>
+<meta name="description" content="Landing pages and business sites designed and built by a senior full-stack developer in Abuja, quoted at a fixed price before work starts.">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Ibukun Aluko: fixed-price websites for small businesses">
-<meta property="og:description" content="Three fixed-scope website packages, from $180.">
+<meta property="og:title" content="Ibukun Aluko: websites for small businesses">
+<meta property="og:description" content="Fast, carefully made websites from a senior full-stack developer.">
 <meta property="og:image" content="share.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
@@ -51,6 +51,8 @@
   #work .panel .frame__img { object-fit: cover; object-position: top; }
   @media (max-width: 1023px) { #work .panel { --p-h: auto; aspect-ratio: 4 / 3; } }
   /* packages: the section's one photograph (picture-develops), as tall as the text beside it */
+  .rows > li.principle { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: var(--s-5); align-items: start; }
+  .principle .ic-tile { margin-top: 2px; }
   .develop { margin: 0; border-radius: var(--r-lg); overflow: hidden; height: min(560px, var(--ly-fit)); }
   .develop > img[hidden] { display: none; }
   .develop > img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: top; }
@@ -58,10 +60,10 @@
   .form { position: relative; }
   .hp { position: absolute; width: 1px; height: 1px; margin: 0; padding: 0; border: 0; opacity: 0; overflow: hidden; clip-path: inset(50%); pointer-events: none; }
   #work .card p { color: var(--ink); }
-  @media (min-width: 640px) and (max-width: 1023px) { #work { --h: 2; } #work .panel { aspect-ratio: 16 / 10; } #brief textarea { min-height: 56px; } #brief .form { gap: var(--s-3); } #brief .rows > li { padding-block: var(--s-3); } #brief .tools { margin-top: var(--s-4); } }
-  @media (min-width: 800px) and (max-width: 1023px) { #work .panel { aspect-ratio: 1.42 / 1; } }
+  @media (min-width: 640px) and (max-width: 1023px) { #work { --h: 2; } #work .panel { aspect-ratio: 1.75 / 1; } #brief textarea { min-height: 56px; } #brief .form { gap: var(--s-3); } #brief .rows > li { padding-block: var(--s-3); } #brief .tools { margin-top: var(--s-4); } }
+  @media (min-width: 800px) and (max-width: 1023px) { #work .panel { aspect-ratio: 1.5 / 1; } }
   @media (min-width: 1024px) and (max-width: 1279px) { #work .grid > .card.span-4 { grid-column: span 4; } #work .panel { --p-h: 217px; } .faq > .faq__item { padding-block: var(--s-3); } #packages .rows > li { padding-block: var(--s-3); } #packages h2 .muted { display: none; } #brief .section-head { gap: var(--s-2); margin-bottom: var(--s-5); } #brief textarea { min-height: 56px; } #brief .rows > li { padding-block: var(--s-3); } #brief .form { gap: var(--s-3); } #brief .tools { margin-top: var(--s-4); } }
-  @media (max-width: 639px) { #work, #packages, #brief { --hm: 2; } .faq > .faq__item { padding-block: var(--s-2); gap: var(--s-1); } #faq .tools { margin-top: var(--s-3); } #faq h2 .muted { display: none; } .develop { margin-top: var(--s-7); aspect-ratio: 4 / 5; } }
+  @media (max-width: 639px) { #work, #approach, #packages, #brief { --hm: 2; } .faq > .faq__item { padding-block: var(--s-2); gap: var(--s-1); } #faq .tools { margin-top: var(--s-3); } #faq h2 .muted { display: none; } .develop { margin-top: var(--s-7); aspect-ratio: 4 / 5; } }
   .tools { display: flex; flex-wrap: wrap; gap: var(--s-3); margin-top: var(--s-6); }
 </style>
 </head>
@@ -76,6 +78,7 @@
     <a class="nav__logo" href="#top"><span class="mark" data-mark="arc" aria-hidden="true"></span>Ibukun Aluko</a>
     <nav class="nav__links" aria-label="Main">
       <div class="nav__item"><a class="nav__link" href="#work">Work</a></div>
+      <div class="nav__item"><a class="nav__link" href="#approach">Approach</a></div>
       <div class="nav__item"><a class="nav__link" href="#faq">Questions</a></div>
       <div class="nav__item"><a class="nav__link" href="#packages">Packages</a></div>
     </nav>
@@ -91,17 +94,17 @@
 <main id="top">
   <section class="hero hero--word" data-enter aria-labelledby="hero-h">
     <div class="wrap"><div class="hero-text hero__in">
-      <h1 id="hero-h">Websites at fixed prices for <span class="ly-word" data-ly-word='["clinics.","startups."]'>shops.</span></h1>
+      <h1 id="hero-h">Websites for <span class="ly-word" data-ly-word='["clinics.","studios.","founders."]'>shops.</span></h1>
       <div class="grid hero__foot">
         <div class="span-6">
-          <p class="hero__lead">I build landing pages and business sites for small businesses. Every package has a fixed price, a delivery date and two rounds of changes.</p>
-          <div class="btn-row"><a class="btn btn--primary" href="#brief">Send a brief</a><a class="btn btn--secondary" href="#packages">See the packages</a></div>
+          <p class="hero__lead">I design and build fast, carefully made websites that win trust and bring in enquiries: a single landing page or a full business site, from a senior full-stack developer.</p>
+          <div class="btn-row"><a class="btn btn--primary" href="#brief">Send a brief</a><a class="btn btn--secondary" href="#approach">See how I work</a></div>
         </div>
         <dl class="hero__facts hero__facts--col span-6 start-7">
-          <div><dt>Landing page</dt><dd data-assumed>From $180</dd></div>
-          <div><dt>Business site</dt><dd data-assumed>From $450</dd></div>
-          <div><dt>Pro</dt><dd data-assumed>From $950</dd></div>
-          <div><dt>Delivery</dt><dd data-assumed>3 to 14 days</dd></div>
+          <div><dt>Experience</dt><dd>Five years, full stack</dd></div>
+          <div><dt>Worked with</dt><dd>Fintech, software, agencies</dd></div>
+          <div><dt>Scope</dt><dd>Fixed before work starts</dd></div>
+          <div><dt>Reply</dt><dd>Within a day</dd></div>
         </dl>
       </div>
     </div></div>
@@ -110,28 +113,46 @@
   <section class="section" id="work" aria-labelledby="work-h">
     <div class="wrap">
       <div class="section-head">
-        <h2 id="work-h">Websites I have built. <span class="muted">Each one has a part you can use.</span></h2>
+        <h2 id="work-h">Websites I have built. <span class="muted">Each one does a job for its visitors.</span></h2>
       </div>
       <div class="grid">
         <a class="card card--row card--open span-4" href="https://vantage-works-concepts.vercel.app/work/calder-row" target="_blank" rel="noopener">
           <h3>Calder Row website</h3>
-          <p>A condominium site in Brooklyn. Choose a floor, then work out the monthly cost.</p>
+          <p>A residential development in Brooklyn. Visitors pick a floor, see what is available and work out the monthly cost before they ever call.</p>
           <div class="panel"><img class="frame__img" src="img/calder-row.jpg" srcset="img/calder-row-600.jpg 600w, img/calder-row.jpg 1200w" sizes="(max-width: 1023px) 100vw, 410px" width="1200" height="900" alt="The Calder Row home page: a headline over a building diagram with a list of units for the chosen floor" loading="lazy" data-source="shoot" data-subject="Calder Row"></div>
           <span class="link">View the live site<svg class="m-arrow" viewBox="0 0 12 12" aria-hidden="true"><path class="m-arrow__stem" d="M1 6h8"/><path class="m-arrow__head" d="M4.5 2.5 8 6l-3.5 3.5"/></svg></span>
         </a>
         <a class="card card--row card--open span-4" href="https://vantage-works-concepts.vercel.app/work/aubel" target="_blank" rel="noopener">
           <h3>Aubel Clinic website</h3>
-          <p>A skin clinic site in West Hollywood, with a treatment finder and a consultation calendar.</p>
+          <p>A skin clinic in West Hollywood. Visitors find the right treatment and book a consultation slot without a phone call.</p>
           <div class="panel"><img class="frame__img" src="img/aubel.jpg" srcset="img/aubel-600.jpg 600w, img/aubel.jpg 1200w" sizes="(max-width: 1023px) 100vw, 410px" width="1200" height="900" alt="The Aubel Clinic home page: a serif headline beside a consultation booking calendar" loading="lazy" data-source="shoot" data-subject="Aubel Clinic"></div>
           <span class="link">View the live site<svg class="m-arrow" viewBox="0 0 12 12" aria-hidden="true"><path class="m-arrow__stem" d="M1 6h8"/><path class="m-arrow__head" d="M4.5 2.5 8 6l-3.5 3.5"/></svg></span>
         </a>
         <a class="card card--row card--open span-4" href="https://vantage-works-concepts.vercel.app/work/halden" target="_blank" rel="noopener">
           <h3>Halden website</h3>
-          <p>A site for a forecasting tool. Three sliders change a revenue chart as you drag them.</p>
+          <p>A forecasting tool for finance teams. Three sliders redraw a revenue chart live, so the product explains itself.</p>
           <div class="panel"><img class="frame__img" src="img/halden.jpg" srcset="img/halden-600.jpg 600w, img/halden.jpg 1200w" sizes="(max-width: 1023px) 100vw, 410px" width="1200" height="900" alt="The Halden home page: a headline over a revenue forecast chart with sliders" loading="lazy" data-source="shoot" data-subject="Halden"></div>
           <span class="link">View the live site<svg class="m-arrow" viewBox="0 0 12 12" aria-hidden="true"><path class="m-arrow__stem" d="M1 6h8"/><path class="m-arrow__head" d="M4.5 2.5 8 6l-3.5 3.5"/></svg></span>
         </a>
       </div>
+    </div>
+  </section>
+
+  <section class="section" id="approach" aria-labelledby="approach-h">
+    <div class="wrap grid grid--top">
+      <div class="span-5">
+        <div class="section-head">
+          <h2 id="approach-h">How I build a website. <span class="muted">Each choice is made for your customers.</span></h2>
+          <p class="t-lead">I am a senior full-stack developer in Abuja, with five years across fintech, software and agencies and teams in Nigeria, the UK and the US. I take every brief myself, from first call to launch.</p>
+        </div>
+      </div>
+      <ul class="rows span-6 start-7">
+          <li class="principle"><span class="ic-tile"><svg class="ic ic-svg ic-32" role="img" aria-label="Target" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></g></svg></span><div><span class="rows__name">Built around one next step</span><p>Every page has one job and one clear action: a call, a booking or a brief. I settle that before I draw a layout.</p></div></li>
+          <li class="principle"><span class="ic-tile"><svg class="ic ic-svg ic-32" role="img" aria-label="Smartphone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"/><path d="M12 18h.01"/></g></svg></span><div><span class="rows__name">Fast on a phone</span><p>Most visitors arrive on a phone. I build for small screens and slow connections first, and check every site on a phone before you see it.</p></div></li>
+          <li class="principle"><span class="ic-tile"><svg class="ic ic-svg ic-32" role="img" aria-label="Search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="m21 21l-4.34-4.34"/><circle cx="11" cy="11" r="8"/></g></svg></span><div><span class="rows__name">Easy for search to read</span><p>Clean structure, proper titles and quick pages, so search engines can read the site and customers can find it.</p></div></li>
+          <li class="principle"><span class="ic-tile"><svg class="ic ic-svg ic-32" role="img" aria-label="Key Round" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M2.586 17.414A2 2 0 0 0 2 18.828V21a1 1 0 0 0 1 1h3a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1h1a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1h.172a2 2 0 0 0 1.414-.586l.814-.814a6.5 6.5 0 1 0-4-4z"/><circle cx="16.5" cy="7.5" r=".5" fill="currentColor"/></g></svg></span><div><span class="rows__name">Yours to keep</span><p>You own the site, the code and the accounts. I hand everything over and set it up so nobody depends on me to keep it running.</p></div></li>
+          <li class="principle"><span class="ic-tile"><svg class="ic ic-svg ic-32" role="img" aria-label="Pen Tool" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M15.707 21.293a1 1 0 0 1-1.414 0l-1.586-1.586a1 1 0 0 1 0-1.414l5.586-5.586a1 1 0 0 1 1.414 0l1.586 1.586a1 1 0 0 1 0 1.414z"/><path d="m18 13l-1.375-6.874a1 1 0 0 0-.746-.776L3.235 2.028a1 1 0 0 0-1.207 1.207L5.35 15.879a1 1 0 0 0 .776.746L13 18M2.3 2.3l7.286 7.286"/><circle cx="11" cy="11" r="2"/></g></svg></span><div><span class="rows__name">Drawn for your business</span><p>Layouts are designed around your customers and what you sell, not picked from a template library and filled in.</p></div></li>
+      </ul>
     </div>
   </section>
 
@@ -144,11 +165,12 @@
         <div class="tools"><span class="ic-tile"><svg class="ic ic-svg ic-32" role="img" aria-label="Fixed price" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="32" height="32"><circle cx="12" cy="12" r="10"/><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8m4 2V6"/></svg></span><span class="ic-tile"><svg class="ic ic-svg ic-32" role="img" aria-label="Two rounds of changes" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="32" height="32"><path d="M3 12a9 9 0 0 1 9-9a9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5m5 4a9 9 0 0 1-9 9a9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M8 16H3v5"/></svg></span><span class="ic-tile"><svg class="ic ic-svg ic-32" role="img" aria-label="Delivery date" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="32" height="32"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></span><span class="ic-tile"><svg class="ic ic-svg ic-32" role="img" aria-label="You own it" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="32" height="32"><path d="M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z"/><path d="M14 2v5a1 1 0 0 0 1 1h5M9 15l2 2l4-4"/></svg></span></div>
       </div>
       <div class="faq span-6 start-7">
-        <div class="faq__item"><h3>What the fixed price covers</h3><p>The pages and features in the package. Anything extra is quoted before I start it.</p></div>
+        <div class="faq__item"><h3>How the price works</h3><p>I quote a fixed price once I have read your brief. It covers the pages and features in the package, and anything extra is quoted before I start it.</p></div>
         <div class="faq__item"><h3>Who owns the website</h3><p>You do. I hand over everything and set it up on your own accounts.</p></div>
+        <div class="faq__item"><h3>How long a website takes</h3><p>Three days for a landing page, a week for a business site and two weeks for Pro, counted from when I have your content.</p></div>
+        <div class="faq__item"><h3>What I need for your website</h3><p>Your text, photos and logo, or a short call to talk them through. If something is missing, I tell you before I start.</p></div>
         <div class="faq__item"><h3>How many website changes are included</h3><p>Two rounds in every package, each one list of changes.</p></div>
         <div class="faq__item"><h3>AI features in a website</h3><p>Yes, in the Pro package. My Document Q&amp;A project answers from a PDF and cites the page.</p></div>
-        <div class="faq__item"><h3>Who builds the website</h3><p>Ibukun Aluko, in Abuja, Nigeria. I have five years of full-stack work behind me in fintech, software and agencies, and I take every brief myself.</p></div>
       </div>
     </div>
   </section>
@@ -157,12 +179,12 @@
     <div class="wrap grid grid--top" data-peek>
       <div class="span-5">
         <div class="section-head">
-          <h2 id="packages-h">Three packages at fixed prices. <span class="muted">In US dollars, counted from when I have your content.</span></h2>
+          <h2 id="packages-h">Three ways to work together. <span class="muted">Fixed scope, quoted after your brief.</span></h2>
         </div>
         <ul class="rows">
-          <li data-peek-to="landing" tabindex="0"><span class="rows__name">Landing page</span><p>One page, mobile-ready, with a contact form. Live in <span data-assumed>3 days</span>. <a class="link" href="#brief-form">Order this package</a></p><span class="rows__value" data-assumed>$180</span></li>
-          <li data-peek-to="business" tabindex="0"><span class="rows__name">Business site</span><p>Up to five pages, search basics and analytics. Live in <span data-assumed>7 days</span>. <a class="link" href="#brief-form">Order this package</a></p><span class="rows__value" data-assumed>$450</span></li>
-          <li data-peek-to="pro" tabindex="0"><span class="rows__name">Pro</span><p>Up to ten pages and one custom feature, such as answers from your PDFs. Live in <span data-assumed>14 days</span>. <a class="link" href="#brief-form">Order this package</a></p><span class="rows__value" data-assumed>$950</span></li>
+          <li data-peek-to="landing" tabindex="0"><span class="rows__name">Landing page</span><p>One page, mobile-ready, with a contact form. <a class="link" href="#brief-form">Ask about this package</a></p><span class="rows__value" data-assumed>3 days</span></li>
+          <li data-peek-to="business" tabindex="0"><span class="rows__name">Business site</span><p>Up to five pages, search basics and analytics. <a class="link" href="#brief-form">Ask about this package</a></p><span class="rows__value" data-assumed>7 days</span></li>
+          <li data-peek-to="pro" tabindex="0"><span class="rows__name">Pro</span><p>Up to ten pages and one custom feature, such as answers from your PDFs. <a class="link" href="#brief-form">Ask about this package</a></p><span class="rows__value" data-assumed>14 days</span></li>
         </ul>
       </div>
       <figure class="develop span-6 start-7" data-moment="picture-develops">
@@ -222,7 +244,7 @@
       <div class="grid">
         <div class="span-4 stack-4">
           <a class="nav__logo" href="#top"><span class="mark" data-mark="arc" aria-hidden="true"></span>Ibukun Aluko</a>
-          <p class="footer__lede">Fixed-price websites, delivered on a date.</p>
+          <p class="footer__lede">Websites that earn trust and enquiries.</p>
         </div>
         <div class="span-2 start-9 footer__col"><h3>Pages</h3><ul><li><a href="#work">Work</a></li><li><a href="#faq">Questions</a></li><li><a href="#packages">Packages</a></li></ul></div>
         <div class="span-2 footer__col"><h3>Contact</h3><ul><li><a href="#brief">Send a brief</a></li></ul></div>
