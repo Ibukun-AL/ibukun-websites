@@ -1,16 +1,23 @@
 {
   "palettes": [
     "olive-on-bone",
+    "olive-on-bone",
+    "olive-on-bone",
     "olive-on-bone"
   ],
   "types": [
     "hanken",
-    "instrument-serif"
+    "instrument-serif",
+    "newsreader",
+    "newsreader"
   ],
   "dealt": [
     "hanken",
     "instrument-serif",
-    "red-hat"
+    "red-hat",
+    "work-sans",
+    "source-serif",
+    "newsreader"
   ],
   "moments": [
     {

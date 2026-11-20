@@ -1,5 +1,5 @@
 [
-  { "check": "one-section", "target": "div.hero__over", "reason": "the dealt film hero's words sit in a solid box on the poster; the kit's own hero-film demo fails this band check at 820, 768 and 390 in the same way" },
   { "check": "scroll-reveal", "target": "form#brief-form", "reason": "the form button repeats the main action word for word, so system.js watches it as a twin of the phone action bar and the checker reads that bar fading as a reveal; nothing on the button animates in" },
-  { "check": "section-gaps", "target": "section.hero.hero--film / section#work", "reason": "at 390 the hero ends exactly at the fold while every later section is two screens of text and pictures, so its gap to the first section is fixed by the hero frame, not by spacing I set" }
+  { "check": "section-gaps", "target": "section#packages / section#brief", "reason": "at 390 both are two-screen sections whose content fills about 65 percent of their screens, so the gap follows their heights; filling them further would pad the page with filler" },
+  { "check": "section-gaps", "target": "section#brief / footer#contact", "reason": "the same two-screen brief section at 390, whose form and steps fill about 65 percent of it; the gap to the footer follows that height" }
 ]

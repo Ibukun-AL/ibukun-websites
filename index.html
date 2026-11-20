@@ -4,10 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Ibukun Aluko: fixed-price websites for small businesses, from $180</title>
-<meta name="description" content="Landing pages and business sites built in Next.js and hosted on Vercel, in three fixed-scope packages from $180, by a developer in Abuja.">
+<meta name="description" content="Landing pages and business sites in three fixed-scope packages from $180, delivered on the date I quote, by a developer in Abuja.">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Ibukun Aluko: fixed-price websites for small businesses">
-<meta property="og:description" content="Three fixed-scope packages for Next.js websites, from $180.">
+<meta property="og:description" content="Three fixed-scope website packages, from $180.">
 <meta property="og:image" content="share.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
@@ -17,7 +17,7 @@
 <meta name="page-type" content="service">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Instrument+Sans:wdth,wght@75..100,400..600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400..700&family=Hanken+Grotesk:wght@400..600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/system.css">
 <link rel="stylesheet" href="assets/ui/cards.css">
 <link rel="stylesheet" href="assets/motion/motion.css">
@@ -30,12 +30,12 @@
   --p-accent: #38450f; --p-accent-ink: #ecebe7; --p-action: #38450f; --p-action-ink: #ecebe7;
   --p-inv-bg: #38450f; --p-inv-surface: #435020; --p-inv-ink: #ecebe7; --p-inv-muted: #bbbfaf;
   --p-inv-accent: #ecebe7; --p-inv-accent-ink: #38450f; --p-inv-action: #ecebe7; --p-inv-action-ink: #38450f;
-  --font-display: "Instrument Serif", Georgia, serif;
-  --font-text: "Instrument Sans", system-ui, sans-serif;
+  --font-display: "Newsreader", Georgia, serif;
+  --font-text: "Hanken Grotesk", system-ui, sans-serif;
   --display-weight: 400;
-  --display-tracking: -0.012em;
-  --display-tracking-xl: -0.016em;
-  --ly-scale: 1.12;
+  --display-tracking: -0.018em;
+  --display-tracking-xl: -0.025em;
+  --ly-scale: 1.06;
 }
 </style>
 <script>document.documentElement.classList.add('m-enter');setTimeout(()=>document.documentElement.classList.add('m-enter-done'),700)</script>
@@ -47,17 +47,19 @@
 <style>
   /* work: one ratio (4:3) for the three captures, the panel as tall as a 4:3 frame at span-4 */
   #work .panel { --p-h: 308px; }
+  #work a.card .link { margin-top: var(--s-3); align-self: start; }
   #work .panel .frame__img { object-fit: cover; object-position: top; }
   @media (max-width: 1023px) { #work .panel { --p-h: auto; aspect-ratio: 4 / 3; } }
   /* packages: the section's one photograph (picture-develops), as tall as the text beside it */
   .develop { margin: 0; border-radius: var(--r-lg); overflow: hidden; height: min(560px, var(--ly-fit)); }
+  .develop > img[hidden] { display: none; }
   .develop > img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: top; }
   @media (max-width: 1023px) { .develop { height: auto; aspect-ratio: 2 / 1; margin-top: var(--s-6); } }
   .form { position: relative; }
   .hp { position: absolute; width: 1px; height: 1px; margin: 0; padding: 0; border: 0; opacity: 0; overflow: hidden; clip-path: inset(50%); pointer-events: none; }
   #work .card p { color: var(--ink); }
   @media (min-width: 640px) and (max-width: 1023px) { #work { --h: 2; } #work .panel { aspect-ratio: 16 / 10; } #brief textarea { min-height: 56px; } #brief .form { gap: var(--s-3); } #brief .rows > li { padding-block: var(--s-3); } #brief .tools { margin-top: var(--s-4); } }
-  @media (min-width: 800px) and (max-width: 1023px) { #work .panel { aspect-ratio: 4 / 3; } }
+  @media (min-width: 800px) and (max-width: 1023px) { #work .panel { aspect-ratio: 1.42 / 1; } }
   @media (min-width: 1024px) and (max-width: 1279px) { #work .grid > .card.span-4 { grid-column: span 4; } #work .panel { --p-h: 217px; } .faq > .faq__item { padding-block: var(--s-3); } #packages .rows > li { padding-block: var(--s-3); } #packages h2 .muted { display: none; } #brief .section-head { gap: var(--s-2); margin-bottom: var(--s-5); } #brief textarea { min-height: 56px; } #brief .rows > li { padding-block: var(--s-3); } #brief .form { gap: var(--s-3); } #brief .tools { margin-top: var(--s-4); } }
   @media (max-width: 639px) { #work, #packages, #brief { --hm: 2; } .faq > .faq__item { padding-block: var(--s-2); gap: var(--s-1); } #faq .tools { margin-top: var(--s-3); } #faq h2 .muted { display: none; } .develop { margin-top: var(--s-7); aspect-ratio: 4 / 5; } }
   .tools { display: flex; flex-wrap: wrap; gap: var(--s-3); margin-top: var(--s-6); }
@@ -65,7 +67,7 @@
 </head>
 <body>
 <!-- type: service
-     deal: hero film, nav-centre, close-type, footer-columns, rhythm space, buttons tonal, mark arc, palette olive-on-bone, type instrument-serif (hanken failed hero-lines)
+     deal: hero word (user chose an editorial, type-led vibe; the film hero was dropped), nav-centre, close-type, footer-columns, rhythm space, buttons tonal, mark arc, palette olive-on-bone, type newsreader (user wanted an editorial voice)
      moments: picture-develops on the packages photograph -->
 
 <header class="nav nav--centre">
@@ -87,21 +89,20 @@
 </header>
 
 <main id="top">
-  <section class="hero hero--film" data-enter aria-labelledby="hero-h">
+  <section class="hero hero--word" data-enter aria-labelledby="hero-h">
     <div class="wrap"><div class="hero-text hero__in">
-      <div class="hero__media hero__fill">
-        <picture><source media="(max-width: 639px)" srcset="img/poster-phone.jpg"><img src="img/poster.jpg" width="2000" height="1125" alt="The home page of Ibukun Aluko's portfolio: a large headline beside a card that lists a project's brief, build, test and ship steps" style="--ly-pos: 50% 40%" fetchpriority="high" data-source="shoot" data-subject="portfolio site home page"></picture>
-        <div class="hero__over">
-          <div>
-            <h1 id="hero-h">Fixed-price websites from <span data-assumed>$180</span></h1>
-            <p class="hero__lead">Landing pages and business sites for small businesses, built in Next.js and hosted on Vercel. Three packages, each with a fixed scope.</p>
-            <div class="btn-row"><a class="btn btn--primary" href="#brief">Send a brief</a><a class="btn btn--secondary" href="#packages">See the packages</a></div>
-          </div>
-          <a class="ly-play" href="#work" data-film="img/film.webm">
-            <span class="ly-play__disc"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M4.5 2.6v12.8c0 .8.9 1.3 1.6.9l10.3-6.4c.6-.4.6-1.3 0-1.7L6.1 1.7c-.7-.4-1.6.1-1.6.9Z" fill="currentColor"/></svg></span>
-            <span class="ly-play__label">Play the film<small>A scroll through my portfolio site</small></span>
-          </a>
+      <h1 id="hero-h">Websites at fixed prices for <span class="ly-word" data-ly-word='["clinics.","startups."]'>shops.</span></h1>
+      <div class="grid hero__foot">
+        <div class="span-6">
+          <p class="hero__lead">I build landing pages and business sites for small businesses. Every package has a fixed price, a delivery date and two rounds of changes.</p>
+          <div class="btn-row"><a class="btn btn--primary" href="#brief">Send a brief</a><a class="btn btn--secondary" href="#packages">See the packages</a></div>
         </div>
+        <dl class="hero__facts hero__facts--col span-6 start-7">
+          <div><dt>Landing page</dt><dd data-assumed>From $180</dd></div>
+          <div><dt>Business site</dt><dd data-assumed>From $450</dd></div>
+          <div><dt>Pro</dt><dd data-assumed>From $950</dd></div>
+          <div><dt>Delivery</dt><dd data-assumed>3 to 14 days</dd></div>
+        </dl>
       </div>
     </div></div>
   </section>
@@ -109,24 +110,27 @@
   <section class="section" id="work" aria-labelledby="work-h">
     <div class="wrap">
       <div class="section-head">
-        <h2 id="work-h">Sites built in Next.js. <span class="muted">Each one has a part you can use.</span></h2>
+        <h2 id="work-h">Websites I have built. <span class="muted">Each one has a part you can use.</span></h2>
       </div>
       <div class="grid">
-        <article class="card card--row card--open span-4">
+        <a class="card card--row card--open span-4" href="https://vantage-works-concepts.vercel.app/work/calder-row" target="_blank" rel="noopener">
           <h3>Calder Row website</h3>
           <p>A condominium site in Brooklyn. Choose a floor, then work out the monthly cost.</p>
           <div class="panel"><img class="frame__img" src="img/calder-row.jpg" srcset="img/calder-row-600.jpg 600w, img/calder-row.jpg 1200w" sizes="(max-width: 1023px) 100vw, 410px" width="1200" height="900" alt="The Calder Row home page: a headline over a building diagram with a list of units for the chosen floor" loading="lazy" data-source="shoot" data-subject="Calder Row"></div>
-        </article>
-        <article class="card card--row card--open span-4">
+          <span class="link">View the live site<svg class="m-arrow" viewBox="0 0 12 12" aria-hidden="true"><path class="m-arrow__stem" d="M1 6h8"/><path class="m-arrow__head" d="M4.5 2.5 8 6l-3.5 3.5"/></svg></span>
+        </a>
+        <a class="card card--row card--open span-4" href="https://vantage-works-concepts.vercel.app/work/aubel" target="_blank" rel="noopener">
           <h3>Aubel Clinic website</h3>
           <p>A skin clinic site in West Hollywood, with a treatment finder and a consultation calendar.</p>
           <div class="panel"><img class="frame__img" src="img/aubel.jpg" srcset="img/aubel-600.jpg 600w, img/aubel.jpg 1200w" sizes="(max-width: 1023px) 100vw, 410px" width="1200" height="900" alt="The Aubel Clinic home page: a serif headline beside a consultation booking calendar" loading="lazy" data-source="shoot" data-subject="Aubel Clinic"></div>
-        </article>
-        <article class="card card--row card--open span-4">
+          <span class="link">View the live site<svg class="m-arrow" viewBox="0 0 12 12" aria-hidden="true"><path class="m-arrow__stem" d="M1 6h8"/><path class="m-arrow__head" d="M4.5 2.5 8 6l-3.5 3.5"/></svg></span>
+        </a>
+        <a class="card card--row card--open span-4" href="https://vantage-works-concepts.vercel.app/work/halden" target="_blank" rel="noopener">
           <h3>Halden website</h3>
           <p>A site for a forecasting tool. Three sliders change a revenue chart as you drag them.</p>
           <div class="panel"><img class="frame__img" src="img/halden.jpg" srcset="img/halden-600.jpg 600w, img/halden.jpg 1200w" sizes="(max-width: 1023px) 100vw, 410px" width="1200" height="900" alt="The Halden home page: a headline over a revenue forecast chart with sliders" loading="lazy" data-source="shoot" data-subject="Halden"></div>
-        </article>
+          <span class="link">View the live site<svg class="m-arrow" viewBox="0 0 12 12" aria-hidden="true"><path class="m-arrow__stem" d="M1 6h8"/><path class="m-arrow__head" d="M4.5 2.5 8 6l-3.5 3.5"/></svg></span>
+        </a>
       </div>
     </div>
   </section>
@@ -137,31 +141,35 @@
         <div class="section-head">
           <h2 id="faq-h">Questions before you hire me. <span class="muted">Short answers.</span></h2>
         </div>
-        <div class="tools"><span class="ic-tile"><img class="ic ic-32" src="assets/icons/nextjs.svg" alt="Next.js" width="32" height="32" loading="lazy"></span><span class="ic-tile"><img class="ic ic-32" src="assets/icons/react.svg" alt="React" width="32" height="29" loading="lazy"></span><span class="ic-tile"><img class="ic ic-32" src="assets/icons/typescript.svg" alt="TypeScript" width="32" height="32" loading="lazy"></span><span class="ic-tile"><img class="ic ic-32 ic-land" src="assets/icons/tailwindcss.svg" alt="Tailwind CSS" width="32" height="19" loading="lazy"></span></div>
+        <div class="tools"><span class="ic-tile"><svg class="ic ic-svg ic-32" role="img" aria-label="Fixed price" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="32" height="32"><circle cx="12" cy="12" r="10"/><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8m4 2V6"/></svg></span><span class="ic-tile"><svg class="ic ic-svg ic-32" role="img" aria-label="Two rounds of changes" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="32" height="32"><path d="M3 12a9 9 0 0 1 9-9a9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5m5 4a9 9 0 0 1-9 9a9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M8 16H3v5"/></svg></span><span class="ic-tile"><svg class="ic ic-svg ic-32" role="img" aria-label="Delivery date" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="32" height="32"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></span><span class="ic-tile"><svg class="ic ic-svg ic-32" role="img" aria-label="You own it" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="32" height="32"><path d="M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z"/><path d="M14 2v5a1 1 0 0 0 1 1h5M9 15l2 2l4-4"/></svg></span></div>
       </div>
       <div class="faq span-6 start-7">
         <div class="faq__item"><h3>What the fixed price covers</h3><p>The pages and features in the package. Anything extra is quoted before I start it.</p></div>
-        <div class="faq__item"><h3>Who owns the website</h3><p>You do. I hand over the code on GitHub and deploy it to your Vercel account.</p></div>
-        <div class="faq__item"><h3>How many changes a package includes</h3><p>Two rounds in every package, each one list of changes.</p></div>
+        <div class="faq__item"><h3>Who owns the website</h3><p>You do. I hand over everything and set it up on your own accounts.</p></div>
+        <div class="faq__item"><h3>How many website changes are included</h3><p>Two rounds in every package, each one list of changes.</p></div>
         <div class="faq__item"><h3>AI features in a website</h3><p>Yes, in the Pro package. My Document Q&amp;A project answers from a PDF and cites the page.</p></div>
-        <div class="faq__item"><h3>Who builds the website</h3><p>Ibukun Aluko, in Abuja, Nigeria. Five years of full-stack work in fintech, software and agencies.</p></div>
+        <div class="faq__item"><h3>Who builds the website</h3><p>Ibukun Aluko, in Abuja, Nigeria. I have five years of full-stack work behind me in fintech, software and agencies, and I take every brief myself.</p></div>
       </div>
     </div>
   </section>
 
   <section class="section" id="packages" aria-labelledby="packages-h">
-    <div class="wrap grid grid--top">
+    <div class="wrap grid grid--top" data-peek>
       <div class="span-5">
         <div class="section-head">
           <h2 id="packages-h">Three packages at fixed prices. <span class="muted">In US dollars, counted from when I have your content.</span></h2>
         </div>
         <ul class="rows">
-          <li><span class="rows__name">Landing page</span><p>One page, mobile-ready, with a contact form. Live in <span data-assumed>3 days</span>. <a class="link" href="#brief-form">Order this package</a></p><span class="rows__value" data-assumed>$180</span></li>
-          <li><span class="rows__name">Business site</span><p>Up to five pages, search basics and analytics. Live in <span data-assumed>7 days</span>. <a class="link" href="#brief-form">Order this package</a></p><span class="rows__value" data-assumed>$450</span></li>
-          <li><span class="rows__name">Pro</span><p>Up to ten pages and one custom feature, such as answers from your PDFs. Live in <span data-assumed>14 days</span>. <a class="link" href="#brief-form">Order this package</a></p><span class="rows__value" data-assumed>$950</span></li>
+          <li data-peek-to="landing" tabindex="0"><span class="rows__name">Landing page</span><p>One page, mobile-ready, with a contact form. Live in <span data-assumed>3 days</span>. <a class="link" href="#brief-form">Order this package</a></p><span class="rows__value" data-assumed>$180</span></li>
+          <li data-peek-to="business" tabindex="0"><span class="rows__name">Business site</span><p>Up to five pages, search basics and analytics. Live in <span data-assumed>7 days</span>. <a class="link" href="#brief-form">Order this package</a></p><span class="rows__value" data-assumed>$450</span></li>
+          <li data-peek-to="pro" tabindex="0"><span class="rows__name">Pro</span><p>Up to ten pages and one custom feature, such as answers from your PDFs. Live in <span data-assumed>14 days</span>. <a class="link" href="#brief-form">Order this package</a></p><span class="rows__value" data-assumed>$950</span></li>
         </ul>
       </div>
-      <figure class="develop span-6 start-7" data-moment="picture-develops"><img src="img/document-qa.jpg" srcset="img/document-qa-700.jpg 700w, img/document-qa.jpg 1224w" sizes="(max-width: 1023px) 100vw, 640px" alt="The Document Q&amp;A app: four sample pages and a question box with three example questions" width="1224" height="1080" loading="lazy" data-source="shoot" data-subject="Document Q&A app"></figure>
+      <figure class="develop span-6 start-7" data-moment="picture-develops">
+        <img data-peek-for="landing" src="img/pkg-landing.jpg" width="1224" height="1092" alt="A long one-page site: a clinic's treatments table and a consultation section on a single scroll" loading="lazy" data-source="shoot" data-subject="Aubel Clinic lower sections">
+        <img data-peek-for="business" src="img/pkg-business.jpg" width="1224" height="1092" alt="A multi-section business site: building features, a floor-by-floor cost calculator and neighbourhood details" loading="lazy" hidden data-source="shoot" data-subject="Calder Row lower sections">
+        <img data-peek-for="pro" src="img/document-qa.jpg" srcset="img/document-qa-700.jpg 700w, img/document-qa.jpg 1224w" sizes="(max-width: 1023px) 100vw, 640px" width="1224" height="1080" alt="The Document Q&amp;A app: four sample pages and a question box with three example questions" loading="lazy" hidden data-source="shoot" data-subject="Document Q&A app">
+      </figure>
     </div>
   </section>
 
@@ -175,9 +183,9 @@
         <ul class="rows">
           <li><span class="rows__name">You send the brief</span><p>Your business, the pages you want and any site you like.</p></li>
           <li><span class="rows__name">I send a quote</span><p>A fixed price and a delivery date for the package that fits.</p></li>
-          <li><span class="rows__name">I build, you review</span><p>Two rounds of changes, then it goes live on your Vercel account.</p></li>
+          <li><span class="rows__name">I build, you review</span><p>Two rounds of changes, then it goes live on your own accounts.</p></li>
         </ul>
-        <div class="tools"><span class="ic-tile"><img class="ic ic-32 ic-ink" src="assets/icons/vercel.svg" alt="Vercel" width="32" height="28" loading="lazy"></span><span class="ic-tile"><img class="ic ic-32 ic-ink" src="assets/icons/github.svg" alt="GitHub" width="32" height="31" loading="lazy"></span></div>
+        <div class="tools"><span class="ic-tile"><svg class="ic ic-svg ic-32" role="img" aria-label="Quote by email" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="32" height="32"><path d="m22 7l-8.991 5.727a2 2 0 0 1-2.009 0L2 7"/><rect width="20" height="16" x="2" y="4" rx="2"/></svg></span><span class="ic-tile"><svg class="ic ic-svg ic-32" role="img" aria-label="Delivery date" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="32" height="32"><path d="M8 2v4m8-4v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18M9 16l2 2l4-4"/></svg></span></div>
       </div>
       <form class="form span-6 start-7" id="brief-form" action="mailto:hello@ibukun.example" method="post" enctype="text/plain" data-endpoint="/api/brief" data-sent="Your brief is in. Expect my reply with a fixed quote." novalidate>
         <div class="field"><label for="f-name">Name</label>
@@ -214,7 +222,7 @@
       <div class="grid">
         <div class="span-4 stack-4">
           <a class="nav__logo" href="#top"><span class="mark" data-mark="arc" aria-hidden="true"></span>Ibukun Aluko</a>
-          <p class="footer__lede">Fixed-price websites, built in Next.js.</p>
+          <p class="footer__lede">Fixed-price websites, delivered on a date.</p>
         </div>
         <div class="span-2 start-9 footer__col"><h3>Pages</h3><ul><li><a href="#work">Work</a></li><li><a href="#faq">Questions</a></li><li><a href="#packages">Packages</a></li></ul></div>
         <div class="span-2 footer__col"><h3>Contact</h3><ul><li><a href="#brief">Send a brief</a></li></ul></div>
