@@ -1,0 +1,78 @@
+/* Motion layer: depth, parallax and reveals. Only transform and opacity animate.
+   Hidden "from" states exist only under .js, and everything rests under reduced motion. */
+
+/* scroll progress */
+.fx-progress { position: fixed; inset: 0 0 auto 0; height: 3px; background: var(--action); transform: scaleX(0); transform-origin: 0 50%; z-index: 30; pointer-events: none; }
+@supports (animation-timeline: scroll()) {
+  .fx-progress { animation: fx-grow linear both; animation-timeline: scroll(root); }
+  @keyframes fx-grow { to { transform: scaleX(1); } }
+}
+
+/* hero depth stack: three real sites as windows at different depths */
+.hero-depth { position: absolute; z-index: 0; right: var(--gut); top: calc(var(--nav) + 56px); width: min(31vw, 440px); aspect-ratio: 1 / 0.8; pointer-events: none; perspective: 1200px; }
+.hero--word .wrap { position: relative; z-index: 1; }
+.win { --d: 1; position: absolute; width: 62%; border-radius: 12px; background: #fff; overflow: hidden;
+  box-shadow: 0 1px 0 rgb(0 0 0 / .06), 0 22px 40px -18px rgb(30 40 5 / .45), 0 60px 90px -40px rgb(30 40 5 / .4);
+  transform: translate3d(calc(var(--px, 0) * var(--d) * -22px), calc(var(--py, 0) * var(--d) * -16px), 0) rotate(var(--r, 0deg)); will-change: transform; }
+.win__bar { display: flex; gap: 5px; align-items: center; height: 22px; padding: 0 10px; background: #f3f2ee; border-bottom: 1px solid rgb(0 0 0 / .06); }
+.win__bar i { width: 7px; height: 7px; border-radius: 50%; background: #cfcdc4; }
+.win img { display: block; width: 100%; height: auto; }
+.win--a { --d: 0.5; --r: -2deg; left: 0; top: 0; z-index: 1; }
+.win--b { --d: 1; --r: 2.5deg; right: 0; top: 22%; z-index: 2; }
+.win--c { --d: 1.7; --r: -1deg; left: 14%; bottom: 0; z-index: 3; }
+@media (max-width: 1099px) { .hero-depth { display: none; } }
+
+/* depth on scroll: layers drift at different speeds as the hero leaves */
+@supports (animation-timeline: scroll()) {
+  .js .win { animation: fx-drift linear both; animation-timeline: scroll(root); animation-range: 0 90vh; }
+  .win--a { --lift: -30px; } .win--b { --lift: -70px; } .win--c { --lift: -120px; }
+  @keyframes fx-drift { to { translate: 0 var(--lift); } }
+}
+/* entrance: windows rise in one after another */
+.js .win { opacity: 0; }
+.js.fx-ready .win { animation: fx-in 1.1s cubic-bezier(.16, 1, .3, 1) both, fx-drift linear both; animation-timeline: auto, scroll(root); animation-range: normal, 0 90vh; }
+.js.fx-ready .win--b { animation-delay: .12s, 0s; } .js.fx-ready .win--c { animation-delay: .24s, 0s; }
+@keyframes fx-in { from { opacity: 0; translate: 0 60px; } to { opacity: 1; } }
+@supports not (animation-timeline: scroll()) { .js.fx-ready .win { animation: fx-in 1.1s cubic-bezier(.16, 1, .3, 1) both; opacity: 1; } }
+
+/* reveals */
+.js [data-reveal] { opacity: 0; transform: translate3d(0, 28px, 0); transition: opacity .9s cubic-bezier(.16, 1, .3, 1), transform .9s cubic-bezier(.16, 1, .3, 1); transition-delay: calc(var(--i, 0) * 80ms); }
+.js [data-reveal].in { opacity: 1; transform: none; }
+
+/* word-by-word headline reveal: words are wrapped by fx.js */
+.fx-split .w { display: inline-block; overflow: hidden; vertical-align: top; padding-bottom: .12em; margin-bottom: -.12em; }
+.fx-split .w > span { display: inline-block; }
+.js .fx-split .w > span { transform: translate3d(0, 112%, 0); transition: transform 1s cubic-bezier(.16, 1, .3, 1); transition-delay: calc(var(--wi, 0) * 45ms); }
+.js .fx-split.in .w > span { transform: none; }
+
+/* work cards: the site inside scrolls slowly on hover, the card lifts */
+#work .panel .frame__img { position: absolute; top: 0; left: 0; width: 100%; height: auto; max-width: none; object-fit: initial; transform: translate3d(0, 0, 0); transition: transform 2.8s cubic-bezier(.22, 1, .36, 1); }
+@media (hover: hover) and (pointer: fine) {
+  #work a.card:hover .panel .frame__img, #work a.card:focus-visible .panel .frame__img { transform: translate3d(0, calc(var(--ph, 300px) - 100%), 0); }
+}
+
+/* marquee band */
+.marquee { overflow: hidden; padding: var(--s-7) 0; border-block: 1px solid var(--line); }
+.marquee__track { display: flex; width: max-content; animation: fx-marquee 46s linear infinite; will-change: transform; }
+.marquee:hover .marquee__track { animation-play-state: paused; }
+.marquee__track span { flex: none; padding-right: .6em; font: var(--display-weight) clamp(56px, 8vw, 128px)/1 var(--font-display); letter-spacing: var(--display-tracking-xl); color: var(--ink); white-space: nowrap; }
+.marquee__track span em { font-style: italic; color: var(--muted); }
+@keyframes fx-marquee { to { transform: translate3d(-50%, 0, 0); } }
+
+/* parallax inside the packages picture and the work frames */
+@supports (animation-timeline: view()) {
+  #packages .develop > img { animation: fx-pan linear both; animation-timeline: view(); animation-range: cover 0% cover 100%; }
+  @keyframes fx-pan { from { translate: 0 -3%; scale: 1.08; } to { translate: 0 3%; scale: 1.08; } }
+}
+
+/* depth of the brief form: it settles in from below the section */
+.js #brief-form[data-reveal] { transform: translate3d(0, 48px, 0); }
+.js #brief-form[data-reveal].in { transform: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  .fx-progress { display: none; }
+  .win, .js .win, .js.fx-ready .win { animation: none !important; opacity: 1; transform: rotate(var(--r, 0deg)); translate: none; }
+  .js [data-reveal], .js .fx-split .w > span { opacity: 1; transform: none; transition: none; }
+  .marquee__track { animation: none; }
+  #work .panel .frame__img { transition: none; }
+}
