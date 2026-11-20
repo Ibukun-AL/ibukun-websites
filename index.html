@@ -24,7 +24,6 @@
 <link rel="stylesheet" href="assets/backgrounds/backgrounds.css">
 <link rel="stylesheet" href="assets/layout/layout.css">
 <link rel="stylesheet" href="assets/icons/icon.css">
-<link rel="stylesheet" href="scrollcraft/sc.css">
 <style>
 :root {
   --p-bg: #ecebe7; --p-surface: #e1dfd9; --p-ink: #38450f; --p-muted: #5a6537;
@@ -39,7 +38,7 @@
   --ly-scale: 1.06;
 }
 </style>
-<script>document.documentElement.classList.add('js');document.documentElement.classList.add('m-enter');setTimeout(()=>document.documentElement.classList.add('m-enter-done'),700)</script>
+<script>document.documentElement.classList.add('m-enter');setTimeout(()=>document.documentElement.classList.add('m-enter-done'),700)</script>
 <script src="assets/backgrounds/backgrounds.js"></script>
 <script>document.documentElement.classList.add('mo-js');setTimeout(()=>document.documentElement.classList.add('mo-safe'),2500)</script>
 <link rel="modulepreload" href="assets/moments/moments.js">
@@ -47,10 +46,10 @@
 <link rel="modulepreload" href="assets/moments/picture-develops/moment.js">
 <style>
   /* work: one ratio (4:3) for the three captures, the panel as tall as a 4:3 frame at span-4 */
-  #sites .panel { --p-h: 308px; }
-  #sites a.card .link { margin-top: var(--s-3); align-self: start; }
-  #sites .panel .frame__img { object-fit: cover; object-position: top; }
-  @media (max-width: 1023px) { #sites .panel { --p-h: auto; aspect-ratio: 4 / 3; } }
+  #work .panel { --p-h: 308px; }
+  #work a.card .link { margin-top: var(--s-3); align-self: start; }
+  #work .panel .frame__img { object-fit: cover; object-position: top; }
+  @media (max-width: 1023px) { #work .panel { --p-h: auto; aspect-ratio: 4 / 3; } }
   /* packages: the section's one photograph (picture-develops), as tall as the text beside it */
   .develop { margin: 0; border-radius: var(--r-lg); overflow: hidden; height: min(560px, var(--ly-fit)); }
   .develop > img[hidden] { display: none; }
@@ -58,11 +57,11 @@
   @media (max-width: 1023px) { .develop { height: auto; aspect-ratio: 2 / 1; margin-top: var(--s-6); } }
   .form { position: relative; }
   .hp { position: absolute; width: 1px; height: 1px; margin: 0; padding: 0; border: 0; opacity: 0; overflow: hidden; clip-path: inset(50%); pointer-events: none; }
-  #sites .card p { color: var(--ink); }
-  @media (min-width: 640px) and (max-width: 1023px) { #sites { --h: 2; } #sites .panel { aspect-ratio: 16 / 10; } #brief textarea { min-height: 56px; } #brief .form { gap: var(--s-3); } #brief .rows > li { padding-block: var(--s-3); } #brief .tools { margin-top: var(--s-4); } }
-  @media (min-width: 800px) and (max-width: 1023px) { #sites .panel { aspect-ratio: 1.42 / 1; } }
-  @media (min-width: 1024px) and (max-width: 1279px) { #sites .grid > .card.span-4 { grid-column: span 4; } #sites .panel { --p-h: 217px; } .faq > .faq__item { padding-block: var(--s-3); } #packages .rows > li { padding-block: var(--s-3); } #packages h2 .muted { display: none; } #brief .section-head { gap: var(--s-2); margin-bottom: var(--s-5); } #brief textarea { min-height: 56px; } #brief .rows > li { padding-block: var(--s-3); } #brief .form { gap: var(--s-3); } #brief .tools { margin-top: var(--s-4); } }
-  @media (max-width: 639px) { #sites, #packages, #brief { --hm: 2; } .faq > .faq__item { padding-block: var(--s-2); gap: var(--s-1); } #faq .tools { margin-top: var(--s-3); } #faq h2 .muted { display: none; } .develop { margin-top: var(--s-7); aspect-ratio: 4 / 5; } }
+  #work .card p { color: var(--ink); }
+  @media (min-width: 640px) and (max-width: 1023px) { #work { --h: 2; } #work .panel { aspect-ratio: 16 / 10; } #brief textarea { min-height: 56px; } #brief .form { gap: var(--s-3); } #brief .rows > li { padding-block: var(--s-3); } #brief .tools { margin-top: var(--s-4); } }
+  @media (min-width: 800px) and (max-width: 1023px) { #work .panel { aspect-ratio: 1.42 / 1; } }
+  @media (min-width: 1024px) and (max-width: 1279px) { #work .grid > .card.span-4 { grid-column: span 4; } #work .panel { --p-h: 217px; } .faq > .faq__item { padding-block: var(--s-3); } #packages .rows > li { padding-block: var(--s-3); } #packages h2 .muted { display: none; } #brief .section-head { gap: var(--s-2); margin-bottom: var(--s-5); } #brief textarea { min-height: 56px; } #brief .rows > li { padding-block: var(--s-3); } #brief .form { gap: var(--s-3); } #brief .tools { margin-top: var(--s-4); } }
+  @media (max-width: 639px) { #work, #packages, #brief { --hm: 2; } .faq > .faq__item { padding-block: var(--s-2); gap: var(--s-1); } #faq .tools { margin-top: var(--s-3); } #faq h2 .muted { display: none; } .develop { margin-top: var(--s-7); aspect-ratio: 4 / 5; } }
   .tools { display: flex; flex-wrap: wrap; gap: var(--s-3); margin-top: var(--s-6); }
 </style>
 </head>
@@ -108,18 +107,7 @@
     </div></div>
   </section>
 
-  <div class="scrub" id="work" data-sc-pin>
-    <img class="scrub__poster" src="frames/calder/0001.webp" width="1120" height="700" alt="" fetchpriority="low">
-    <canvas class="sc-canvas" id="scrub-canvas" role="img" aria-label="A recording of the Calder Row website scrolling from its headline and floor picker down to the monthly cost calculator and the neighbourhood list"></canvas>
-    <div class="scrub__copy">
-      <div class="scrub__beat on"><h2>A real site, scrolling.</h2></div>
-      <div class="scrub__beat"><h2>A floor picker and a cost calculator.</h2></div>
-      <div class="scrub__beat"><h2>Open it and try them.</h2><p>Calder Row is one of three sites I built.</p><a class="link" href="https://vantage-works-concepts.vercel.app/work/calder-row" target="_blank" rel="noopener">View the live site<svg class="m-arrow" viewBox="0 0 12 12" aria-hidden="true"><path class="m-arrow__stem" d="M1 6h8"/><path class="m-arrow__head" d="M4.5 2.5 8 6l-3.5 3.5"/></svg></a></div>
-    </div>
-    <div class="scrub__bar" aria-hidden="true"></div>
-  </div>
-
-  <section class="section" id="sites" aria-labelledby="work-h">
+  <section class="section" id="work" aria-labelledby="work-h">
     <div class="wrap">
       <div class="section-head">
         <h2 id="work-h">Websites I have built. <span class="muted">Each one has a part you can use.</span></h2>
@@ -151,7 +139,7 @@
     <div class="wrap grid grid--top">
       <div class="span-5">
         <div class="section-head">
-          <h2 id="faq-h" class="assemble"><span class="line"><span>Questions before you hire me.</span></span> <span class="line"><span class="muted">Short answers.</span></span></h2>
+          <h2 id="faq-h">Questions before you hire me. <span class="muted">Short answers.</span></h2>
         </div>
         <div class="tools"><span class="ic-tile"><svg class="ic ic-svg ic-32" role="img" aria-label="Fixed price" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="32" height="32"><circle cx="12" cy="12" r="10"/><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8m4 2V6"/></svg></span><span class="ic-tile"><svg class="ic ic-svg ic-32" role="img" aria-label="Two rounds of changes" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="32" height="32"><path d="M3 12a9 9 0 0 1 9-9a9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5m5 4a9 9 0 0 1-9 9a9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M8 16H3v5"/></svg></span><span class="ic-tile"><svg class="ic ic-svg ic-32" role="img" aria-label="Delivery date" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="32" height="32"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></span><span class="ic-tile"><svg class="ic ic-svg ic-32" role="img" aria-label="You own it" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="32" height="32"><path d="M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z"/><path d="M14 2v5a1 1 0 0 0 1 1h5M9 15l2 2l4-4"/></svg></span></div>
       </div>
@@ -169,7 +157,7 @@
     <div class="wrap grid grid--top" data-peek>
       <div class="span-5">
         <div class="section-head">
-          <h2 id="packages-h" class="assemble"><span class="line"><span>Three packages at fixed prices.</span></span> <span class="line"><span class="muted">In US dollars, counted from when I have your content.</span></span></h2>
+          <h2 id="packages-h">Three packages at fixed prices. <span class="muted">In US dollars, counted from when I have your content.</span></h2>
         </div>
         <ul class="rows">
           <li data-peek-to="landing" tabindex="0"><span class="rows__name">Landing page</span><p>One page, mobile-ready, with a contact form. Live in <span data-assumed>3 days</span>. <a class="link" href="#brief-form">Order this package</a></p><span class="rows__value" data-assumed>$180</span></li>
@@ -189,7 +177,7 @@
     <div class="wrap grid grid--top">
       <div class="span-5">
         <div class="section-head">
-          <h2 id="brief-h" class="assemble"><span class="line"><span>Send a brief</span></span> <span class="line"><span>and get a fixed quote.</span></span></h2>
+          <h2 id="brief-h">Send a brief and get a fixed quote.</h2>
           <p class="t-lead">Tell me what the site is for and when you need it. I answer with a price and a date.</p>
         </div>
         <ul class="rows">
@@ -254,7 +242,5 @@
 <script type="module" src="assets/system.js"></script>
 <script type="module" src="assets/motion/motion.js"></script>
 <script type="module" src="assets/layout/layout.js"></script>
-<script src="scrollcraft/scrollcraft.js"></script>
-<script src="scrollcraft/site.js"></script>
 </body>
 </html>
