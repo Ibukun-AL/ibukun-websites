@@ -12,7 +12,7 @@
 .hero-depth { position: absolute; z-index: 0; right: var(--gut); top: calc(var(--nav) + 56px); width: min(31vw, 440px); aspect-ratio: 1 / 0.8; pointer-events: none; perspective: 1200px; }
 .hero--word .wrap { position: relative; z-index: 1; }
 .win { --d: 1; position: absolute; width: 62%; border-radius: 12px; background: #fff; overflow: hidden;
-  box-shadow: 0 1px 0 rgb(0 0 0 / .06), 0 22px 40px -18px rgb(30 40 5 / .45), 0 60px 90px -40px rgb(30 40 5 / .4);
+  box-shadow: 0 1px 0 rgb(0 0 0 / .06), 0 22px 40px -18px rgb(0 0 0 / .28), 0 60px 90px -40px rgb(0 0 0 / .22);
   transform: translate3d(calc(var(--px, 0) * var(--d) * -22px), calc(var(--py, 0) * var(--d) * -16px), 0) rotate(var(--r, 0deg)); will-change: transform; }
 .win__bar { display: flex; gap: 5px; align-items: center; height: 22px; padding: 0 10px; background: #f3f2ee; border-bottom: 1px solid rgb(0 0 0 / .06); }
 .win__bar i { width: 7px; height: 7px; border-radius: 50%; background: #cfcdc4; }

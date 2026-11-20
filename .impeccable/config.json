@@ -47,6 +47,15 @@
         ],
         "createdAt": "2026-11-20T09:42:34.760Z",
         "reason": "assets/starter.html is the skill kit's unmodified starter template (bracket placeholders), not part of the site; kit files may not be edited"
+      },
+      {
+        "rule": "marquee",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-11-20T11:12:51.008Z",
+        "reason": "decorative audience band added in the motion layer the user asked for (awwwards-level animation); aria-hidden, pauses on hover, stopped under reduced motion; it carries no information that is not in the page text"
       }
     ]
   }
